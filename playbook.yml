@@ -2,5 +2,5 @@
 - hosts: all
   tasks:
     - template:
-        src: "{{ template_name }}"
+        src: "{{ template_name|default('default_template.in') }}"
         dest: "./{{ inventory_hostname }}-output.txt"
